@@ -30,6 +30,10 @@ configure Patchwork using Docker:
         package.
   __ post-install_
 
+  .. note::
+
+      Mac users might need to enable Rosetta emulation in the docker engine.
+
 #. (Optional) Create a ``.env`` file in the root directory of the project and
    store your ``UID`` and ``GID`` attribute there.
 
@@ -43,6 +47,12 @@ configure Patchwork using Docker:
    `docker-compose issue`__.
 
    __ https://github.com/docker/compose/issues/2380
+
+   .. note::
+
+      For MacOS users the `staff` default GID might conflict with already
+      existing GID in the docker image, that why the non-unique GID option is
+      used in the Dockerfiles
 
 #. Build the images. This will download over 200MB from the internet:
 
